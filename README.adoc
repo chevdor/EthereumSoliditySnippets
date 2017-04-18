@@ -1,0 +1,3 @@
+= EthereumSoliditySnippets
+
+A set of SublimeText snippets for the Ethereum Solidity contract language.
