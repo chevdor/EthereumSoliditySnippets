@@ -1,10 +1,11 @@
 <snippet>
 	<content><![CDATA[
-pragma solidity ${1:^0.4.10;}
+enum ${1:Colors} { ${2:Red}, ${3:Green}}
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>pragma</tabTrigger>
+	<tabTrigger>enum</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.solidity</scope>
 </snippet>
+

@@ -2,6 +2,4 @@
 
 A set of SublimeText snippets for the Ethereum Solidity contract language.
 
-Use +Control Package+, Add a Channel and provide:
-
-	https://raw.githubusercontent.com/chevdor/package_control_channel/master/channel.json
+Use +Control Package+ to install.

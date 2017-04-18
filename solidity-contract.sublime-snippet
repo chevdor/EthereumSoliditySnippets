@@ -8,6 +8,7 @@ contract ${1:contractName} {
 		${4}
 	}	
 }
+
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>contract</tabTrigger>
