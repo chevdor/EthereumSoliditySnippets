@@ -1,0 +1,17 @@
+{
+    "schema_version" : "3.0",
+    "packages" : [
+    	{
+ 			"name": "EthereumSoliditySnippets",
+ 			"author": "Chevdor",
+ 			"details": "https://github.com/chevdor/EthereumSoliditySnippets",
+ 			"labels" : [ "ethereum", "sublime", "snippets", "blockchain" ],
+ 			"releases": [
+ 				{
+ 					"sublime_text": "*",
+ 					"tags": true
+ 				}
+ 			]
+  		}
+  	]
+}
