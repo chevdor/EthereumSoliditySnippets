@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+modifier ${1:name}(${2:uint _time}) { 
+	if (${3:now >= _time}) throw; 
+	_; 
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modifier</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.solidity</scope>
+</snippet>
