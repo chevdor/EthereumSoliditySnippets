@@ -30,11 +30,11 @@ contract ERC20_Token {
 }
 
 contract ${1:MyToken} is ERC20_Token {
-	mapping (address => uint256) public balanceOf;
+	mapping (address => uint256) public balances;
 	mapping (address => mapping (address => uint256)) public allowance;
 
 	uint256 initialSupply;
-
+	
 	/**
 	 * Prevent an account from behing 0x0
 	 * @param addr Address to check
@@ -52,10 +52,35 @@ contract ${1:MyToken} is ERC20_Token {
 	 * @param value [description]
 	 */
 	modifier ValidBalance(address from, address to, uint256 value) { 
-		if (balanceOf[from] < value) throw;                 // Check if the sender has enough
-        if (balanceOf[to] + value < balanceOf[to]) throw;  // Check for overflows
+		if (balances[from] < value) throw;                 // Check if the sender has enough
+        if (balances[to] + value < balances[to]) throw;  // Check for overflows
 		_; 
 	}
+	
+	/**
+	 * Returns the total amount of tokens
+	 * @return total amount
+	 */
+	function totalSupply() constant returns(uint256 totalSupply) {
+		return initialSupply;
+	}
+
+	/**
+	 * Returns The balance of a given account
+	 * @param addr Address of the account
+	 * @return Balance
+	 */
+	function balanceOf(address addr) constant returns(uint256 balance) {
+		return balances[addr];
+	}
+	
+	/**
+	 * Returns the amount which _spender is still allowed to withdraw from _owner
+	 */
+	function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+		return allowance[_owner][_spender];	
+	}
+
 
 	/**
 	 * Constructor of ${1:MyToken}
@@ -63,7 +88,7 @@ contract ${1:MyToken} is ERC20_Token {
 	 */
 	function ${1:MyToken} (uint256 _totalSupply) {
 		initialSupply = _totalSupply;
-		balanceOf[msg.sender] = _totalSupply;
+		balances[msg.sender] = _totalSupply;
 	}
 
 	/**
@@ -73,8 +98,8 @@ contract ${1:MyToken} is ERC20_Token {
 	 */
 	 function transfer(address _to, uint256 _value) No0x(_to) ValidBalance(msg.sender, _to, _value) 
 	 returns (bool success) {                        
-        balanceOf[msg.sender] -= _value;                     // Subtract from the sender
-        balanceOf[_to] += _value;                            // Add the same to the recipient
+        balances[msg.sender] -= _value;                     // Subtract from the sender
+        balances[_to] += _value;                            // Add the same to the recipient
         Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
     	return true;
     }
@@ -101,8 +126,8 @@ contract ${1:MyToken} is ERC20_Token {
     function transferFrom(address _from, address _to, uint256 _value) No0x (_to) ValidBalance(_from, _to, _value)
     returns (bool success) {
         if (_value > allowance[_from][msg.sender]) throw;     // Check allowance
-        balanceOf[_from] -= _value;                           // Subtract from the sender
-        balanceOf[_to] += _value;                             // Add the same to the recipient
+        balances[_from] -= _value;                           // Subtract from the sender
+        balances[_to] += _value;                             // Add the same to the recipient
         allowance[_from][msg.sender] -= _value;
         Transfer(_from, _to, _value);
         return true;
