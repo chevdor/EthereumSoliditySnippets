@@ -1,10 +1,10 @@
 <snippet>
 	<content><![CDATA[
 /**
- * This contract ${2:does this and that...}
+ * This contract ${1:does this and that...}
  */
-contract ${1:contractName} {
-	function ${1} (${3:ctorArgs}) {
+contract ${2:contractName} {
+	function ${2} (${3}) {
 		${4}
 	}	
 }

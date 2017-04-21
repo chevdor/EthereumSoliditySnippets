@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
-function ${1:myFunction} ${2:public} ${3:modifier()} ${4:returns(bool res)} {
-	${5}
+function ${1:myFunction} ($2) ${3:returns(bool res)} {
+	${4}
 }
 
 ]]></content>
