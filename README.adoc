@@ -3,3 +3,5 @@
 A set of SublimeText snippets for the Ethereum Solidity contract language.
 
 Use +Control Package+ to install.
+
+This package requires the great package from davidhq: https://github.com/davidhq/SublimeEthereum to recognize solidity code.
