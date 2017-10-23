@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+/**
+ * The ${1} library ${2:does this and that...}
+ */
+library ${1:libName} {
+  
+}
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>library</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.solidity</scope>
+</snippet>
+
+
