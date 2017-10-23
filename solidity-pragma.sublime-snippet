@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-pragma solidity ${1:^0.4.11;}
+pragma solidity ${1:^0.4.17;}
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
