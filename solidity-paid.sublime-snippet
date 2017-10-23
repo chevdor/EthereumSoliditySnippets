@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * The ${1} contract allows ensuring that function only
+ * run if the ${2} modifier has been called which
+ * has the effect of enforcing the payment and sending the change.
+ */
+contract ${1:Paid} {
+	event ${2:didPay} (address indexed who, uint price);
+	modifier hasPaid (uint price) { 
+		require(msg.value >= price);
+		if (msg.value > price) {
+			msg.sender.transfer(msg.value - price);
+		} 
+		${2}(msg.sender, price);
+		_; 
+	}
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>paid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.solidity</scope>
+</snippet>

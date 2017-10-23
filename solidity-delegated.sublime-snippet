@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * The ${1} contract allows a set of delegate accounts
+ * to perform special tasks such as admin tasks to the contract
+ */
+contract ${1:Delegated} is Owned {
+	mapping (address => bool) delegates;
+	
+	modifier ${2:only_delegate} { require (msg.sender == owner || delegates[msg.sender]); _; }
+	event DelegateChanged(address delegate, bool state);
+	
+	function setDelegate(address _address, bool state) public only_owner { 
+		if (state) delegates[_address] = true;
+		else delete delegates[_address];
+		DelegateChanged(_address, state);
+	}
+
+	function isDelegate(address account) public constant
+	returns (bool delegate)  {
+		if (delegates[account] == true)
+			return true;
+		else
+			return false;
+	}
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>delegated</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.solidity</scope>
+</snippet>

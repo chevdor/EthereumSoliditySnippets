@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * The ${1} contract ensures that only the creator (deployer) of a 
+ * contract can perform certain tasks.
+ */
+contract ${1:Owned} {
+	address public owner = msg.sender;
+	event OwnerChanged(address indexed old, address indexed current);
+	modifier ${2:only_owner} { require(msg.sender == owner); _; }
+	function setOwner(address _newOwner) ${2} public { OwnerChanged(owner, _newOwner); owner = _newOwner; }
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>owned</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.solidity</scope>
+</snippet>
