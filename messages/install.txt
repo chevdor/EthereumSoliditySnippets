@@ -1,0 +1,26 @@
+
+Welcome!
+
+ Welcome to the Ethereum Solidity Snippets package for SublimeText
+
+
+
+Source
+
+ You can find the source and the documentation at https://github.com/chevdor/EthereumSoliditySnippets
+
+
+
+Requirements
+
+ This package requires the great package from davidhq: https://github.com/davidhq/SublimeEthereum to recognize solidity code.
+
+
+
+Usage
+
+ To get started, create a .sol file. SublimeText will then recognize your file as an Ethereum Solidity file and activate the syntax coloriring as well as the snippets.
+
+ To see the list of available snippets, open the Panel (Shift+Command+P) and type 'solidity'. All snippets are triggered by their Solidity name so they should come up automagically as you type.
+
+ Please share on social media! 
