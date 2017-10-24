@@ -33,7 +33,7 @@ contract ${1:MyToken} is ERC20_Token {
 	mapping (address => uint256) public balances;
 	mapping (address => mapping (address => uint256)) public allowance;
 
-	uint256 initialSupply;
+	uint256 supply;
 	
 	/**
 	 * Prevent an account from behing 0x0
@@ -62,7 +62,7 @@ contract ${1:MyToken} is ERC20_Token {
 	 * @return total amount
 	 */
 	function totalSupply() constant returns(uint256 totalSupply) {
-		return initialSupply;
+		return supply;
 	}
 
 	/**
@@ -87,7 +87,7 @@ contract ${1:MyToken} is ERC20_Token {
 	 * @param _totalSupply Total amount of tokens initially issued
 	 */
 	function ${1:MyToken} (uint256 _totalSupply) {
-		initialSupply = _totalSupply;
+		supply = _totalSupply;
 		balances[msg.sender] = _totalSupply;
 	}
 
