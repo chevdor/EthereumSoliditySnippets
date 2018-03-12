@@ -5,7 +5,7 @@ import "./${1:file}.sol";
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>contract</tabTrigger>
+	<tabTrigger>import</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.solidity</scope>
 </snippet>
