@@ -23,4 +23,4 @@ Usage
 
  To see the list of available snippets, open the Panel (Shift+Command+P) and type 'solidity'. All snippets are triggered by their Solidity name so they should come up automagically as you type.
 
- Please share on social media! 
+ Please share this repository to whoever is learning solidity! 
