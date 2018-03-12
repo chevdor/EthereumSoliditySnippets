@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-enum ${1:Colors} { ${2:Red}, ${3:Green}}
+enum ${1:Color} { ${2:Red}, ${3:Green} }
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
