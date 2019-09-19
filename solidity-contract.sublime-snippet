@@ -4,9 +4,9 @@
  * The ${1} contract ${2:does this and that...}
  */
 contract ${1:contractName} {
-	function ${1} (${3}) {
-		${4}
-	}	
+  constructor() public {
+    ${3}
+  }
 }
 
 ]]></content>
